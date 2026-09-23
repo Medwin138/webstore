@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📱 WebStore — Edwin Laguna
 
-## Getting Started
+Tienda de aplicaciones y portfolio profesional de **Edwin Laguna** (Software Engineer / QA Automation). Aplicaciones útiles, herramientas y soluciones digitales para Android, Windows y Linux.
 
-First, run the development server:
+> **Crea. Automatiza. Simplifica.**
+
+## ✨ Secciones
+
+| Ruta | Sección |
+| --- | --- |
+| `/` | Inicio (hero, destacadas, tecnologías, proyectos, stats) |
+| `/apps` | Tienda con buscador y filtros por plataforma/categoría |
+| `/apps/[slug]` | Ficha de cada aplicación (características, capturas, requisitos, versiones) |
+| `/destacadas` | Aplicaciones destacadas |
+| `/proyectos` | Proyectos y enlaces a GitHub |
+| `/sobre-mi` | Perfil profesional |
+| `/descargas` | Centro de descargas |
+| `/contacto` | Contacto y formulario |
+
+## 🚀 Empezar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 16** (App Router) + **TypeScript**
+- **Tailwind CSS 4** (modo oscuro/claro con toggle persistido)
+- **lucide-react** (iconografía)
+- Datos de ejemplo en `src/data/` (mock hasta conectar el backend)
 
-## Learn More
+## 🗺️ Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+- [x] Fase 1 — Diseño e identidad visual (MVP)
+- [x] Fase 2 — WebStore (inicio, tienda, fichas, perfil, proyectos)
+- [ ] Fase 3 — Backend: PostgreSQL + API
+- [ ] Fase 4 — Sistema de archivos (APK/EXE, screenshots)
+- [ ] Fase 5 — Panel de administración `/admin`
+- [ ] Fase 6 — Seguridad (auth, validación, rate limiting)
+- [ ] Fase 7 — Profesionalización (SEO, reviews, analytics)
+- [ ] Fase 8 — Monetización
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Estructura
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/            # Rutas (App Router)
+├── components/     # Navbar, Footer, AppCard, StoreExplorer, ...
+├── data/           # Datos mock de apps y perfil
+└── hooks/          # useTheme, useLocalStorageValue
+```
 
-## Deploy on Vercel
+## 📄 Licencia
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Proyecto personal. Todos los derechos reservados.

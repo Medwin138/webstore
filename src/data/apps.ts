@@ -83,10 +83,7 @@ export const apps: AppInformation[] = [
       "/webstore/apps/pdf-manager/editor.png",
       "/webstore/apps/pdf-manager/dialogo.png",
       "/webstore/apps/pdf-manager/splash.png",
-      "/webstore/apps/pdf-manager/firmar.png",
       "/webstore/apps/pdf-manager/imagenes.png",
-      "/webstore/apps/pdf-manager/unir.png",
-      "/webstore/apps/pdf-manager/previa_unir.png",
     ],
     requirements: {
       android: "Android 6+",

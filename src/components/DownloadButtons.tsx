@@ -1,7 +1,7 @@
 "use client";
 
 import { Download } from "lucide-react";
-import type { AppFile } from "@/data/apps";
+import type { AppFile, Platform } from "@/data/apps";
 import { platformMeta } from "@/data/helpers";
 
 const RELEASES_URL = "https://github.com/Medwin138/webstore/releases";
@@ -10,14 +10,18 @@ export function DownloadButtons({
   appSlug,
   version,
   files,
+  platform,
 }: {
   appSlug: string;
   version: string;
   files: AppFile[];
+  platform?: Platform;
 }) {
+  const filtered = platform ? files.filter((file) => file.platform === platform) : files;
+
   return (
     <div className="grid gap-3 sm:grid-cols-2">
-      {files.map((file) => {
+      {filtered.map((file) => {
         const href = file.url ?? `${RELEASES_URL}?q=${encodeURIComponent(appSlug)}`;
         return (
           <a

@@ -77,7 +77,11 @@ export function StoreExplorer({ apps }: { apps: AppInformation[] }) {
       {filtered.length > 0 ? (
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((app) => (
-            <AppCard key={app.slug} app={app} />
+            <AppCard
+              key={app.slug}
+              app={app}
+              platformQuery={platform === "todas" ? undefined : platform}
+            />
           ))}
         </div>
       ) : (

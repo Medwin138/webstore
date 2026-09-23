@@ -11,7 +11,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { AppCard } from "@/components/AppCard";
-import { DownloadButtons } from "@/components/DownloadButtons";
+import { AppDownloads } from "@/components/AppDownloads";
 import { apps, getAppBySlug } from "@/data/apps";
 import { categoryLabel, formatDownloads, platformMeta } from "@/data/helpers";
 
@@ -154,18 +154,35 @@ export default async function AppDetailPage({ params }: Props) {
           <h2 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
             Capturas de pantalla
           </h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-3">
-            {screenshotColors.map((color, i) => (
-              <div
-                key={i}
-                className={`relative flex h-44 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${color}`}
-              >
-                <span className="text-5xl drop-shadow-lg">{app.icon}</span>
-                <span className="absolute bottom-3 right-4 rounded-full bg-black/30 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
-                  Vista {i + 1}
-                </span>
-              </div>
-            ))}
+          <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {app.screenshots?.length ? (
+              app.screenshots.map((src, i) => (
+                <figure
+                  key={src}
+                  className="overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={`Captura ${i + 1} de ${app.name}`}
+                    loading="lazy"
+                    className="aspect-[9/16] w-full object-cover"
+                  />
+                </figure>
+              ))
+            ) : (
+              screenshotColors.map((color, i) => (
+                <div
+                  key={i}
+                  className={`relative flex h-44 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${color}`}
+                >
+                  <span className="text-5xl drop-shadow-lg">{app.icon}</span>
+                  <span className="absolute bottom-3 right-4 rounded-full bg-black/30 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+                    Vista {i + 1}
+                  </span>
+                </div>
+              ))
+            )}
           </div>
         </section>
 
@@ -174,11 +191,11 @@ export default async function AppDetailPage({ params }: Props) {
             Descargas
           </h2>
           <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-            Selecciona tu plataforma para descargar la versión {app.version}. El sistema registra
-            cada descarga por aplicación, versión y plataforma.
+            Selecciona tu plataforma para descargar la versión {app.version}. Si la versión no
+            está disponible para tu plataforma, el botón no aparecerá.
           </p>
           <div className="mt-5">
-            <DownloadButtons appSlug={app.slug} version={app.version} files={app.files} />
+            <AppDownloads appSlug={app.slug} version={app.version} files={app.files} />
           </div>
         </section>
 

@@ -31,6 +31,7 @@ export interface AppInformation {
   featured: boolean;
   developer: string;
   features: string[];
+  screenshots?: string[];
   requirements: Record<Platform, string>;
   files: AppFile[];
   releases: AppRelease[];
@@ -55,11 +56,11 @@ export const categories: { value: Category | "todas"; label: string }[] = [
 export const apps: AppInformation[] = [
   {
     slug: "pdf-manager",
-    name: "PDF Manager",
+    name: "PDF Herramienta",
     icon: "📄",
-    shortDescription: "Gestiona tus documentos PDF fácilmente.",
+    shortDescription: "Editor, visor y utilidades para PDF en Android.",
     description:
-      "PDF Manager es una herramienta completa para gestionar tus documentos PDF: unificar, dividir, convertir y organizar archivos desde un único lugar. Diseñada para ahorrarte tiempo en tareas repetitivas de oficina.",
+      "PDF Herramienta es una aplicación nativa de Android para gestionar tus documentos PDF: visor fluido con navegación libre, editor con texto, dibujo, resaltado y formas, firma manuscrita con librería de firmas, conversión de imágenes a PDF y unión de hasta 3 documentos. Abre cualquier PDF desde exploradores, correo o gestores de archivos y guarda los resultados directamente en Descargas.",
     category: "productividad",
     platforms: ["android", "windows", "linux"],
     version: "3.1.1",
@@ -70,10 +71,22 @@ export const apps: AppInformation[] = [
     featured: true,
     developer: "Edwin Laguna",
     features: [
-      "Gestión de PDFs",
-      "Conversión a otros formatos",
-      "Organización de documentos",
-      "Búsqueda dentro del documento",
+      "Añadir texto con 8 fuentes, tamaño, color y rotación",
+      "Dibujar, resaltar, subrayar y formas (línea, flecha, rectángulo…)",
+      "Firmar con librería de firmas y colocación con arrastre y pellizco",
+      "Detectar texto real del PDF para reescribirlo igual",
+      "Imágenes a PDF desde galería o cámara",
+      "Unir PDF con vista previa en vivo",
+    ],
+    screenshots: [
+      "/webstore/apps/pdf-manager/main.png",
+      "/webstore/apps/pdf-manager/editor.png",
+      "/webstore/apps/pdf-manager/dialogo.png",
+      "/webstore/apps/pdf-manager/splash.png",
+      "/webstore/apps/pdf-manager/firmar.png",
+      "/webstore/apps/pdf-manager/imagenes.png",
+      "/webstore/apps/pdf-manager/unir.png",
+      "/webstore/apps/pdf-manager/previa_unir.png",
     ],
     requirements: {
       android: "Android 6+",

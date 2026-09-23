@@ -3,10 +3,10 @@ import { Download, Star } from "lucide-react";
 import type { AppInformation } from "@/data/apps";
 import { categoryLabel, formatDownloads, platformMeta } from "@/data/helpers";
 
-export function AppCard({ app }: { app: AppInformation }) {
+export function AppCard({ app, platformQuery }: { app: AppInformation; platformQuery?: string }) {
   return (
     <Link
-      href={`/apps/${app.slug}`}
+      href={platformQuery ? `/apps/${app.slug}?platform=${platformQuery}` : `/apps/${app.slug}`}
       className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-500/50"
     >
       <div className="flex items-start justify-between">

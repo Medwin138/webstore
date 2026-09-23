@@ -43,11 +43,11 @@ export const profile = {
 export const projects: Project[] = [
   {
     slug: "pdf-manager",
-    name: "PDF Manager",
+    name: "PDF Herramienta",
     icon: "📄",
-    description: "Gestor de documentos PDF para Android, Windows y Linux.",
-    platform: "Android · Windows · Linux",
-    github: "https://github.com/",
+    description: "Editor, visor y utilidades para PDF en Android.",
+    platform: "Android",
+    github: "https://github.com/Medwin138/pdf-herramienta",
     appSlug: "pdf-manager",
   },
   {

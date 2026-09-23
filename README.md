@@ -24,11 +24,20 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
+Abre [http://localhost:3000/webstore](http://localhost:3000/webstore) (la app se sirve bajo `/webstore`).
+
+## 🌐 Deploy (GitHub Pages)
+
+El proyecto genera una **versión 100% estática** (`output: "export"`). Cada push a `main` publica automáticamente el sitio:
+
+- Workflow: `.github/workflows/deploy.yml`
+- URL: **https://Medwin138.github.io/webstore**
+
+Las descargas apuntan a **GitHub Releases**, así los APK/EXE no viven dentro del repositorio del sitio.
 
 ## 🛠️ Stack
 
-- **Next.js 16** (App Router) + **TypeScript**
+- **Next.js 16** (App Router, export estático) + **TypeScript**
 - **Tailwind CSS 4** (modo oscuro/claro con toggle persistido)
 - **lucide-react** (iconografía)
 - Datos de ejemplo en `src/data/` (mock hasta conectar el backend)

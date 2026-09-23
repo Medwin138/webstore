@@ -6,6 +6,7 @@ export interface AppFile {
   platform: Platform;
   format: string;
   size: string;
+  url?: string;
 }
 
 export interface AppRelease {

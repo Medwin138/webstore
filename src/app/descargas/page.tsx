@@ -41,8 +41,17 @@ export default function DescargasPage() {
             className="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-zinc-100 px-5 py-4 last:border-0 dark:border-zinc-800 sm:grid-cols-[1fr_auto_auto_auto]"
           >
             <div className="flex min-w-0 items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-100 text-xl dark:bg-zinc-800">
-                {app.icon}
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800">
+                {app.iconImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={app.iconImage}
+                    alt={app.name}
+                    className="h-8 w-8 rounded-lg object-contain"
+                  />
+                ) : (
+                  <span className="text-xl">{app.icon}</span>
+                )}
               </span>
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-50">

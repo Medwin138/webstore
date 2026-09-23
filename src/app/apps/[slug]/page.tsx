@@ -70,8 +70,17 @@ export default async function AppDetailPage({ params }: Props) {
           </Link>
 
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start">
-            <span className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-zinc-100 text-6xl shadow-inner dark:bg-zinc-800">
-              {app.icon}
+            <span className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-zinc-100 shadow-inner dark:bg-zinc-800">
+              {app.iconImage ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={app.iconImage}
+                  alt={app.name}
+                  className="h-20 w-20 rounded-2xl object-contain"
+                />
+              ) : (
+                <span className="text-6xl">{app.icon}</span>
+              )}
             </span>
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3">

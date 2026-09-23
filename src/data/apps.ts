@@ -19,6 +19,7 @@ export interface AppInformation {
   slug: string;
   name: string;
   icon: string;
+  iconImage?: string;
   shortDescription: string;
   description: string;
   category: Category;
@@ -58,6 +59,7 @@ export const apps: AppInformation[] = [
     slug: "pdf-manager",
     name: "PDF Herramienta",
     icon: "📄",
+    iconImage: "/webstore/apps/pdf-manager/app-icon.png",
     shortDescription: "Editor, visor y utilidades para PDF en Android.",
     description:
       "PDF Herramienta es una aplicación nativa de Android para gestionar tus documentos PDF: visor fluido con navegación libre, editor con texto, dibujo, resaltado y formas, firma manuscrita con librería de firmas, conversión de imágenes a PDF y unión de hasta 3 documentos. Abre cualquier PDF desde exploradores, correo o gestores de archivos y guarda los resultados directamente en Descargas.",

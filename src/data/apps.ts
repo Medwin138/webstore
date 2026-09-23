@@ -62,8 +62,8 @@ export const apps: AppInformation[] = [
       "PDF Manager es una herramienta completa para gestionar tus documentos PDF: unificar, dividir, convertir y organizar archivos desde un único lugar. Diseñada para ahorrarte tiempo en tareas repetitivas de oficina.",
     category: "productividad",
     platforms: ["android", "windows", "linux"],
-    version: "1.2.0",
-    size: "28 MB",
+    version: "3.1.1",
+    size: "8.5 MB",
     updatedAt: "23/09/2026",
     downloads: 1248,
     rating: 4.8,
@@ -76,17 +76,28 @@ export const apps: AppInformation[] = [
       "Búsqueda dentro del documento",
     ],
     requirements: {
-      android: "Android 8+",
+      android: "Android 6+",
       windows: "Windows 10+",
       linux: "Ubuntu 20.04+ / AppImage",
       otras: "Navegador moderno",
     },
     files: [
-      { platform: "android", format: "APK", size: "28 MB" },
+      {
+        platform: "android",
+        format: "APK",
+        size: "8.5 MB",
+        url: "https://github.com/Medwin138/pdf-herramienta/releases/latest/download/PDFHerramienta-v3.1.1.apk",
+      },
       { platform: "windows", format: "EXE", size: "42 MB" },
       { platform: "linux", format: "AppImage", size: "38 MB" },
     ],
     releases: [
+      {
+        version: "v3.1.1",
+        date: "23/09/2026",
+        notes:
+          "Guardar como unificado en Editar, Firmar, Unir e Imágenes; firma seleccionada al colocar con rotación y escala con dos dedos.",
+      },
       { version: "v1.2.0", date: "23/09/2026", notes: "Nuevo motor de búsqueda y correcciones de rendimiento." },
       { version: "v1.1.0", date: "12/08/2026", notes: "Conversión a imagen y firma digital." },
       { version: "v1.0.0", date: "30/06/2026", notes: "Primera versión pública." },
